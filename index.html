@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Página de cadastro</title>
+        <style>
+            /* Otimiza a fonte sem serifa padrão em todo o corpo */
+            body, button, input, select, textarea
+            {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            }
+
+            /* Páragrafos */
+            p
+            {
+                /* Adicionar 10 pixels de margens superior e inferior a fim de afastar os outros páragrafos e os outros elementos */
+                margin-bottom: 10px;
+                margin-top: 10px;
+            }
+
+            /* Rótulos nos campos de entrada. a propriedade torna os rótulos em negrito */
+            label
+            {
+                font-weight: bold;
+            }
+
+            /* Campos de entrada tornando-se normais */
+            input
+            {
+                font-weight: normal;
+            }
+
+            /* Formulário */
+            form
+            {
+                /* Limitando o formulário a 320px */
+                max-width: 320px;
+            }
+
+            /* Agruando o rótulo e o campo de entrada para ativar a gride */
+            .grupo, .lista
+            {
+                /* Ativar a gride */
+                display: grid;
+                /* Aumentar o preenchimento para afastar o rótulo e o campo de entrada */
+                gap: 5px;
+                /* Agrupar o rótulo e o campo de entrada em duas linhas */
+                grid-template-rows: repeat(2, auto);
+                /* Aumentar as margens do grupo para afastar-se de outros grupos */
+                margin-bottom: 20px;
+                margin-top: 20px;
+            }
+
+            /* No grupo de gênero, agrupando um rótulo e duas escolhas agrupadas num bloqueio */
+            .grupo-genero
+            {
+                /* Agrupar um rótulo e dois campos de seleção em três linhas */
+                grid-template-rows: repeat(3, auto);
+            }
+
+            /* No grupo de lista de linguagens de programação, agrupando um rótulo e uma escolha agrupada num bloqueio */
+            .lista
+            {
+                /* Agrupar um rótulo e sete campos de múltipla escolha em oito linhas */
+                grid-template-rows: repeat(8, auto);
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <h1>Cadastro do Cliente</h1>
+        <p>Preencha seus dados nos campos abaixo</p>
+        <form action="sucesso.html" method="get">
+            <div class="grupo">
+                <label>Nome Completo</label>
+                <input type="text" name="Nome Completo" id="Nome Completo" required />
+            </div>
+
+            <div class="grupo">
+                <label for="dnasc">Data de Nascimento</label>
+                <input type="date" name="dnasc" id="dnasc"/>
+            </div>
+
+            <div class="grupo grupo-genero">
+                <label for="genero" required>Informe o seu gênero</label>
+                <div><input type="radio" id="masc" name="masc" value="masc"><label for="masc">Masculino</label></div>
+                <div><input type="radio" id="fem"  name="fem" value="fem"><label for="fem">Feminino</label></div>
+            </div>
+
+            <div class="grupo">
+                <label for="sexo">Selecione seu estado</label>
+                <select id="sexo" name="sexo">
+                    <option selected disabled value="vazio">Selecione</option>
+                    <option value="ac">AC</option>
+                    <option value="al">AL</option>
+                    <option value="ap">AP</option>
+                    <OPTION value="am">AM</OPTION>
+                    <option value="ba">BA</option>
+                    <option value="ce">CE</option>
+                    <option value="es">ES</option>
+                    <option value="go">GO</option>
+                    <option value="ma">MA</option>
+                    <option value="mt">MT</option>
+                    <OPTION value="ms">MS</OPTION>
+                    <option value="mg">MG</option>
+                    <option value="pa">PA</option>
+                    <option value="pb">PB</option>
+                    <option value="pr">PR</option>
+                    <option value="pe">PE</option>
+                    <option value="pi">PI</option>
+                    <option value="rj">RJ</option>
+                    <option value="rn">RN</option>
+                    <option value="rs">RS</option>
+                    <option value="ro">RO</option>
+                    <option value="rr">RR</option>
+                    <option value="sc">SC</option>
+                    <option value="sp">SP</option>
+                    <option value="se">SE</option>
+                    <option value="to">TO</option>
+                    <option value="df">DF</option>
+                </select>
+            </div>
+
+            <div class="grupo">
+                <label for="cpf">CPF</label>
+                <input type="text" name="cpf" id="cpf" required/>
+            </div>
+
+            <div class="grupo">
+                <label for="rg">RG</label>
+                <input type="text" name="rg" id="rg" />
+            </div>
+
+            <div class="grupo">
+                <label for="endereco">Endereço</label>
+                <input type="text" name="endereco" id="endereco" />
+            </div>
+
+            <div class="grupo">
+                <label for="numero">Número</label>
+                <input type="text" name="numero" id="numero" />
+            </div>
+
+            <div class="grupo">
+                <label for="telfixo"> Telefone Fixo</label>
+                <input type="number" name="telfixo" id="telfixo" required />
+            </div>
+
+            <div class="grupo">
+                <label for="telcel">Telefone Celular</label>
+                <input type="number" name="telcel" id="telcel" required/>
+            </div>
+
+            <div class="grupo">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" />
+            </div>
+
+            <div class="grupo">
+                <label for="senioridade">Senioridade</label>
+                <select id="senioridade" required>
+                    <option selected disabled value="vazio">Selecione</option>
+                    <option value=junior>Júnior</option>
+                    <option value=pleno>Pleno</option>
+                    <option value=senior>Sênior</option>
+                </select>
+            </div>
+
+            <div class="lista">
+                <label>Selecione as tecnologias que utiliza:</label>
+                <div>
+                    <input type="checkbox" id="tecnologia1" name="tecnologia1" value="HTML">
+                    <label for="tecnologia1"> HTML</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="tecnologia2" name="tecnologia2" value="CSS">
+                    <label for="tecnologia2"> CSS</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="tecnologia3" name="tecnologia3" value="JavaScript">
+                    <label for="tecnologia3"> JavaScript</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="tecnologia4" name="tecnologia4" value="PHP">
+                    <label for="tecnologia4"> PHP</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="tecnologia5" name="tecnologia5" value="C#">
+                    <label for="tecnologia5"> C#</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="tecnologia6" name="tecnologia6" value="Python">
+                    <label for="tecnologia6"> Python</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="tecnologia7" name="tecnologia7" value="Java">
+                    <label for="tecnologia7"> Java</label>
+                </div>
+            </div>
+
+            <div class="campo">
+                <br>
+                <label for="experiencia">Conte um pouco mais da sua experiência: </label>
+                <textarea rows="6" style="width: 26em" id="experiencia" name="experiencia"></textarea>
+            </div>
+
+            <button type="submit" onclick="funcao1()">Envie</button>
+        </form>
+
+        <script>
+            // Uma função chamada funcao1
+            function funcao1() {
+                // Um diálogo de alerta com uma mensagem
+                alert("Seu Cadastro foi Concluído!");
+            }
+        </script>
+    </body>
+
+</html>
